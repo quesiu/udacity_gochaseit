@@ -20,5 +20,5 @@ jobs:
       run: sudo apt-get install -y gcc clang
     - name: build
       run: catkin_make_isolated ${{ matrix.build_type }} ${{ matrix.compiler }}
-    - name: gtest
-      run: catkin_make run_tests
+    #- name: gtest
+    #  run: catkin_make run_tests
