@@ -15,7 +15,7 @@ jobs:
     - uses: betwo/github-setup-catkin@master
       with:
         ros-version: 'noetic'
-        workspace: '$GITHUB_WORKSPACE/catkin_ws'
+        workspace: '$GITHUB_WORKSPACE'
     - name: install_compiler
       run: sudo apt-get install -y gcc clang
     - name: build
