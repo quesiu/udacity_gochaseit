@@ -1,16 +1,14 @@
----
-name: Setup catkin
-uses: betwo/github-setup-catkin@v1.3.0
-description: 'Set up ROS 1 and catkin and add the command-line tools to the PATH.'
-author: 'betwo'
+name: catkin_make_isolated
+
+on: [push, pull_request]
+
 jobs:
-  catkin-make:
+  ubuntu-18.04:
     runs-on: [ubuntu-18.04]
     steps:
     - uses: actions/checkout@v1
-    - uses: betwo/github-setup-catkin@master
+    - uses: betwo/github-setup-catkin@v1.1.1
       with:
         ros-version: 'melodic'
-        build-tool: 'catkin_tools'
         workspace: '$GITHUB_WORKSPACE'
-    - run: catkin build
+    - run: catkin_make_isolated
