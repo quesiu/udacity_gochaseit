@@ -1,6 +1,9 @@
 # udacity_gochaseit
 Git repository for **Project 2 - Go Chase It!**, part of [Robotics Software Engineer nanodegree](https://www.udacity.com/course/robotics-software-engineer--nd209).
 
+## Build status
+![example workflow](https://github.com/quesiu/udacity_gochaseit/actions/workflows/main.yml/badge.svg)
+
 ## Description
 In the Go Chase It! project, students are asked to define a URDF robot, place it into a 3D world and code functions in ROS flavored C++ to all the robot to chase a white ball when it is placed in the robot's camera field of view.
 
@@ -25,14 +28,14 @@ Please follow the procedure below to be able to correctly build the project:
 git clone https://github.com/quesiu/udacity_gochaseit.git
 cd /change_to_your_local_path_where_this_repo_has_been_cloned/udacity_gochaseit
 mkdir catkin_ws
-mv Project\ 2/ catkin_ws/src
+mv src catkin_ws/src
 ```
 
 ## Build
 Do the following to build the project:
 ```
 cd /change_to_your_local_path_where_this_repo_has_been_cloned/udacity_gochaseit/catkin_ws
-catkin_make
+catkin_make_isolated
 ```
 
 ## Usage
