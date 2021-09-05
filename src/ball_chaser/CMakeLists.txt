@@ -207,10 +207,9 @@ add_dependencies(process_image ball_chaser_generate_messages_cpp)
 
 
 ## Add gtest based cpp test target and link libraries
-catkin_add_gtest(${PROJECT_NAME}-test src/test/process_image_unittest.cpp)
-if(TARGET ${PROJECT_NAME}-test)
-  #target_link_libraries(${PROJECT_NAME}-test ${catkin_LIBRARIES} gtest_main)
-  target_link_libraries(${PROJECT_NAME}-test ${catkin_Libraries} gtest_main)
+if (CATKIN_ENABLE_TESTING)
+  catkin_add_gtest(test_your_node src/test/process_image_unittest.cpp)
+  target_link_libraries(test_your_node ${catkin_LIBRARIES})
 endif()
 
 ## Add folders to be run by python nosetests
