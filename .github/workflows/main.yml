@@ -21,4 +21,4 @@ jobs:
     - name: build
       run: catkin_make_isolated ${{ matrix.build_type }} ${{ matrix.compiler }}
     - name: gtest
-      run: catkin_make run_tests ${{ matrix.build_type }} ${{ matrix.compiler }}
+      run: source devel/setup.bash && catkin_make run_tests ${{ matrix.build_type }} ${{ matrix.compiler }} && catkin_test_results
