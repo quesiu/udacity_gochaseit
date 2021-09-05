@@ -6,7 +6,7 @@ jobs:
   build-20-noetic:
     runs-on: [ubuntu-20.04]
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         build_type: ["-DCMAKE_BUILD_TYPE=Debug", "-DCMAKE_BUILD_TYPE=Release"]
         compiler: ["-DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++", "-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++"]
@@ -20,3 +20,5 @@ jobs:
       run: sudo apt-get install -y gcc clang
     - name: build
       run: catkin_make_isolated ${{ matrix.build_type }} ${{ matrix.compiler }}
+    - name: gtest
+      run: catkin_make run_tests ${{ matrix.build_type }} ${{ matrix.compiler }}
